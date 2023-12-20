@@ -16,6 +16,20 @@ class Pokemon(val nome: String) {
 
 
 
+class Animal(val especie: String) {
+  var fala: String? = null
+
+  init {
+    fala = if(especie == "cachorro") {"Au, au !!"} else if (especie == "gato") {"Miau, miau !!"} else {"nada :("}
+  }
+
+  fun fala() {
+    println("seu/sua ${especie} fez ${fala }")
+  }
+}
+
+
+
 fun main() {
   /*
   // CRIANDO PRIMEIRA CLASSE
@@ -28,6 +42,7 @@ fun main() {
 
 
 
+  /*
   // CONSTRUTORES: PRIMÁRIOS E SECUNDÁRIOS
 
   val pokemonPrimario: Pokemon = Pokemon("Pikachu") // Utilizando construtor primário
@@ -35,5 +50,14 @@ fun main() {
 
   pokemonPrimario.exibir()
   pokemonSecundario.exibir()
+  */
+  
 
+
+
+
+  // INIT
+  val gato: Animal = Animal("gato")
+  gato.fala()
+  
 }
