@@ -66,6 +66,16 @@ enum class notasMedias (val nota: Int) {
 
 
 
+class Robo {
+  lateinit var estado: String
+
+  fun ligar() {
+    if(this::estado.isInitialized) {estado = "ligado"}
+  }
+}
+
+
+
 fun main() {
   /*
   // CRIANDO PRIMEIRA CLASSE
@@ -111,7 +121,18 @@ fun main() {
 
 
 
+  
+  /*
   for(indice in notasMedias.values()) {
     println("Índice do Enum: ${indice}; Valor do Enum: ${indice.nota}")
   }
+  */
+
+
+
+
+
+  val meuRobo:Robo = Robo()
+  meuRobo.ligar()
+  println(meuRobo.estado)
 }
