@@ -85,6 +85,10 @@ class Carro() {
 
 
 
+data class Endereco(var bairro: String, var rua: String, var num: Int) {}
+
+
+
 fun main() {
   /*
   // CRIANDO PRIMEIRA CLASSE
@@ -151,6 +155,7 @@ fun main() {
 
 
 
+  /*
   val meuCarro: Carro = Carro()
   with(meuCarro) {
     ligar()
@@ -158,4 +163,16 @@ fun main() {
     estacionar()
     desligar()
   }
+  */
+
+
+
+
+
+  /*
+  val enderecoUm:Endereco = Endereco("abcd", "3", 18)
+  val enderecoDois:Endereco = Endereco("abcd", "3", 18)
+
+  println(enderecoUm == enderecoDois)
+  */
 }
