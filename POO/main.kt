@@ -76,6 +76,15 @@ class Robo {
 
 
 
+class Carro() {
+  fun ligar() {println("Ligando o carro...")}
+  fun andar() {println("Carro andando...")}
+  fun estacionar() {println("Estacioando o carro")}
+  fun desligar() {println("Desligando o carro")}
+}
+
+
+
 fun main() {
   /*
   // CRIANDO PRIMEIRA CLASSE
@@ -132,7 +141,21 @@ fun main() {
 
 
 
+  /*
   val meuRobo:Robo = Robo()
   meuRobo.ligar()
   println(meuRobo.estado)
+  */
+
+
+
+
+
+  val meuCarro: Carro = Carro()
+  with(meuCarro) {
+    ligar()
+    andar()
+    estacionar()
+    desligar()
+  }
 }
