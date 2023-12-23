@@ -108,6 +108,23 @@ class Computador(val marcaPC: String):Eletronico(marcaPC) {
 
 
 
+open class Veiculo() {
+  open fun desligar(): Unit {println("desligado")}
+}
+
+class Aviao():Veiculo() {
+  override fun desligar(): Unit {
+    println("Aterrizando...")
+    println("Freando...")
+    super.desligar()
+  }
+
+  fun sobrecargaUm(a: Int): Unit {}
+  fun sobrecargaDois(a: Int, b: Int): Unit {}
+  fun sobrecargaTrês(a: Int, b: Int, c: Int): Unit {}
+}
+
+
 fun main() {
   /*
   // CRIANDO PRIMEIRA CLASSE
@@ -199,6 +216,7 @@ fun main() {
 
 
   
+  /*
   // Private: Pode ser utilizada apenas dentro do escopo
   // Public: Pode ser utilizada em qualquer escopo
   // Protected: Pode ser utilizada apenas dentro da classe filha
@@ -207,4 +225,12 @@ fun main() {
   meuPC.instalarSoftware()
   meuPC.desligar()
   meuPC.soarErro()
+  */
+
+
+
+
+
+  val meuAviao: Aviao = Aviao()
+  meuAviao.desligar()
 }
