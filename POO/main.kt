@@ -1,4 +1,6 @@
-class Pessoa(val nome: String, var idade: Int) {}
+
+
+import numAleatorioclass Pessoa(val nome: String, var idade: Int) {}
 
 
 
@@ -50,13 +52,13 @@ enum class notasMedias (val nota: Int) {
       return "Prioridade alta por média ${nota}"
     }
   },
-  
+
   media(7) {
     override fun toString(): String {
       return "Prioridade intermediária por média ${nota}"
     }
   },
-  
+
   alta(9) {
     override fun toString(): String {
       return "Prioridade alta por média ${nota}"
@@ -91,7 +93,7 @@ data class Endereco(var bairro: String, var rua: String, var num: Int) {}
 
 open class Eletronico(val marca: String) {
   private fun ligarCorrente(): Unit {println("ligando corrente...")}
-  
+
   public fun ligar():Unit {
     ligarCorrente()
     println("ligado")
@@ -125,6 +127,26 @@ class Aviao():Veiculo() {
 }
 
 
+
+class numAleatorio() {
+  companion object {
+    var x: Int = 23
+    var y: Int = 89
+
+    fun gerarNumero() {
+      val num: Int = (x..y).random()
+      println("O número gerado foi ${num}")
+    }
+  }
+
+  fun outroGerador() {
+    x = 100
+    y = 200
+    gerarNumero()
+  }
+}
+
+
 fun main() {
   /*
   // CRIANDO PRIMEIRA CLASSE
@@ -146,7 +168,7 @@ fun main() {
   pokemonPrimario.exibir()
   pokemonSecundario.exibir()
   */
-  
+
 
 
 
@@ -156,7 +178,7 @@ fun main() {
   val gato: Animal = Animal("gato")
   gato.fala()
   */
-  
+
 
 
 
@@ -170,7 +192,7 @@ fun main() {
 
 
 
-  
+
   /*
   for(indice in notasMedias.values()) {
     println("Índice do Enum: ${indice}; Valor do Enum: ${indice.nota}")
@@ -215,7 +237,7 @@ fun main() {
 
 
 
-  
+
   /*
   // Private: Pode ser utilizada apenas dentro do escopo
   // Public: Pode ser utilizada em qualquer escopo
@@ -231,6 +253,16 @@ fun main() {
 
 
 
+  /*
   val meuAviao: Aviao = Aviao()
   meuAviao.desligar()
+  */
+
+
+
+
+
+  numAleatorio.gerarNumero() // A partir do companion object
+  val gerador: numAleatorio = numAleatorio() // A partir do objeto
+  gerador.gerarOutro()
 }
