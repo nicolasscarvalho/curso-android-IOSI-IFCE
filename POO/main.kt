@@ -89,6 +89,17 @@ data class Endereco(var bairro: String, var rua: String, var num: Int) {}
 
 
 
+open class Eletronico(val marca: String) {
+  fun ligar():Unit {println("ligando...")}
+  fun desligar():Unit {println("desligando...")}
+}
+
+class Computador(val marcaPC: String):Eletronico(marcaPC) {
+  fun instalarSoftware():Unit {println("Instalando software...")}
+}
+
+
+
 fun main() {
   /*
   // CRIANDO PRIMEIRA CLASSE
@@ -174,5 +185,16 @@ fun main() {
   val enderecoDois:Endereco = Endereco("abcd", "3", 18)
 
   println(enderecoUm == enderecoDois)
+  */
+
+
+
+
+
+  /*
+  val meuPC:Computador = Computador("Lenovo")
+  meuPC.ligar()
+  meuPC.instalarSoftware()
+  meuPC.desligar()
   */
 }
