@@ -90,12 +90,20 @@ data class Endereco(var bairro: String, var rua: String, var num: Int) {}
 
 
 open class Eletronico(val marca: String) {
-  fun ligar():Unit {println("ligando...")}
-  fun desligar():Unit {println("desligando...")}
+  private fun ligarCorrente(): Unit {println("ligando corrente...")}
+  
+  public fun ligar():Unit {
+    ligarCorrente()
+    println("ligado")
+  }
+  public fun desligar():Unit {println("desligando...")}
+
+  protected fun alarmeEmergencia(): Unit {println("Soando alarme de emergência")}
 }
 
 class Computador(val marcaPC: String):Eletronico(marcaPC) {
   fun instalarSoftware():Unit {println("Instalando software...")}
+  fun soarErro(): Unit {alarmeEmergencia()}
 }
 
 
@@ -190,11 +198,13 @@ fun main() {
 
 
 
-
-  /*
+  
+  // Private: Pode ser utilizada apenas dentro do escopo
+  // Public: Pode ser utilizada em qualquer escopo
+  // Protected: Pode ser utilizada apenas dentro da classe filha
   val meuPC:Computador = Computador("Lenovo")
   meuPC.ligar()
   meuPC.instalarSoftware()
   meuPC.desligar()
-  */
+  meuPC.soarErro()
 }
