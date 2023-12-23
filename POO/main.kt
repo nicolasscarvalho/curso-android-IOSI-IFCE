@@ -159,6 +159,29 @@ class Gato(): Mamifero() {
 }
 
 
+
+interface Dev {
+  val salario: Int
+  abstract fun calcularBonus(): Float
+}
+
+class devMobile(override val salario: Int): Dev {
+  override fun calcularBonus(): Float {
+    return 0.6f * salario
+  }
+}
+
+class devDesktop(override val salario: Int): Dev {
+  override fun calcularBonus(): Float {
+    return 0.45f * salario
+  }
+}
+
+fun calcularBonus(dev: Dev) {
+  return dev.calcularBonus()
+}
+
+
 fun main() {
   /*
   // CRIANDO PRIMEIRA CLASSE
@@ -292,8 +315,17 @@ fun main() {
 
 
 
+  /*
   val gato: Gato = Gato()
   gato.tempoVida()
   gato.falar()
   gato.alimentar()
+  */
+
+
+
+
+
+  println(calcularBonus(devMobile(1500)))
+  println(calcularBonus(devMobile(1500)))
 }
