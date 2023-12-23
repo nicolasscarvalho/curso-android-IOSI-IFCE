@@ -1,9 +1,3 @@
-
-
-import numAleatorioclass Pessoa(val nome: String, var idade: Int) {}
-
-
-
 class Pokemon(val nome: String) {
   var atk: Int? = null
 
@@ -147,6 +141,24 @@ class numAleatorio() {
 }
 
 
+
+abstract class Mamifero() {
+  abstract fun tempoVida ()
+  abstract fun falar ()
+  fun alimentar(): Unit {println("Mamífero se alimentando...")}
+}
+
+class Gato(): Mamifero() {
+  override fun tempoVida() {
+    println("Tempo de vida de 18 anos")
+  }
+
+  override fun falar() {
+    println("Miau miau")
+  }
+}
+
+
 fun main() {
   /*
   // CRIANDO PRIMEIRA CLASSE
@@ -269,8 +281,19 @@ fun main() {
 
 
 
+  /*
   // Companion Object e Object
   numAleatorio.gerarNumero() // A partir do companion object
   val gerador: numAleatorio = numAleatorio() // A partir do objeto
   gerador.gerarOutro()
+  */
+
+
+
+
+
+  val gato: Gato = Gato()
+  gato.tempoVida()
+  gato.falar()
+  gato.alimentar()
 }
