@@ -184,6 +184,7 @@ fun main() {
 
 
   /*
+  // Funções GET, SET e FIELD no Kotlin
   val cortadorDeGrama: Maquina = Maquina()
   cortadorDeGrama.estado
   cortadorDeGrama.estado = true
@@ -194,6 +195,7 @@ fun main() {
 
 
   /*
+  // Enumeradores
   for(indice in notasMedias.values()) {
     println("Índice do Enum: ${indice}; Valor do Enum: ${indice.nota}")
   }
@@ -204,6 +206,7 @@ fun main() {
 
 
   /*
+  // Comando Lateinit
   val meuRobo:Robo = Robo()
   meuRobo.ligar()
   println(meuRobo.estado)
@@ -214,6 +217,7 @@ fun main() {
 
 
   /*
+  // Comando With
   val meuCarro: Carro = Carro()
   with(meuCarro) {
     ligar()
@@ -228,6 +232,7 @@ fun main() {
 
 
   /*
+  // DataClass
   val enderecoUm:Endereco = Endereco("abcd", "3", 18)
   val enderecoDois:Endereco = Endereco("abcd", "3", 18)
 
@@ -239,6 +244,7 @@ fun main() {
 
 
   /*
+  // Herança e Modificadores de Acesso
   // Private: Pode ser utilizada apenas dentro do escopo
   // Public: Pode ser utilizada em qualquer escopo
   // Protected: Pode ser utilizada apenas dentro da classe filha
@@ -254,6 +260,7 @@ fun main() {
 
 
   /*
+  // Sobrescrita e Sobrecarga
   val meuAviao: Aviao = Aviao()
   meuAviao.desligar()
   */
@@ -262,6 +269,7 @@ fun main() {
 
 
 
+  // Companion Object e Object
   numAleatorio.gerarNumero() // A partir do companion object
   val gerador: numAleatorio = numAleatorio() // A partir do objeto
   gerador.gerarOutro()
