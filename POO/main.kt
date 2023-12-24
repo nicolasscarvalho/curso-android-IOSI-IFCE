@@ -177,8 +177,23 @@ class devDesktop(override val salario: Int): Dev {
   }
 }
 
-fun calcularBonus(dev: Dev) {
+fun calcularBonus(dev: Dev): Float {
   return dev.calcularBonus()
+}
+
+
+
+interface Evento {
+  fun estado() {}
+}
+
+class Programa(): Evento {
+  fun salvar(e: Evento) {
+    println("Abrindo arquivo...")
+    println("Lendo arquivo...")
+    println("Fechando arquivo...")
+    e.estado()
+  }
 }
 
 
@@ -326,6 +341,19 @@ fun main() {
 
 
 
+  /*
   println(calcularBonus(devMobile(1500)))
   println(calcularBonus(devMobile(1500)))
+  */
+
+
+
+
+
+  val programa: Programa = Programa()
+  programa.salvar(object : Evento{
+    override fun estado () {
+      println("Programa executado com êxito.")
+    }
+  })
 }
