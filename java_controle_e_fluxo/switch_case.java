@@ -27,7 +27,7 @@ public class SwitchCase {
         break;
       default:
         System.out.println("Dia da semana inválido");
-        break
+        break;
     }
     
   }
