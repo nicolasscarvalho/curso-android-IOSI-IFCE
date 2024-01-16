@@ -1,7 +1,7 @@
 public class Cliente {
-  public String nome;
-  protected String cpf;
-  private int ano_nascimento;
+  public String nome; // public -> Classe, métodos e atrbitutos acessíveis em qualquer escopo
+  protected String cpf; // protected -> Classe, métodos e atrbitutos acessíveis apenas no escopo do projeto
+  private int ano_nascimento; // private -> Classe, métodos e atrbitutos acessíveis apenas no escopo da classe
 
   public int getAno_nascimento() {
     return ano_nascimento;
